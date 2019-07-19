@@ -7,8 +7,8 @@ import androidx.lifecycle.LiveData
 
 class NoteViewModel : AndroidViewModel {
 
-    private lateinit var repository: NoteRepository
-    private lateinit var allNotes: LiveData<List<Note>>
+    private var repository: NoteRepository
+    private var allNotes: LiveData<List<Note>>
 
     constructor(@NonNull application: Application) : super(application) {
         repository = NoteRepository(application)
