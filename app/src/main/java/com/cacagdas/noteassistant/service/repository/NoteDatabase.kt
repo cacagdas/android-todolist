@@ -1,4 +1,4 @@
-package com.cacagdas.noteassistantmvvm
+package com.cacagdas.noteassistant.service.repository
 
 import android.content.Context
 import android.os.AsyncTask
@@ -6,6 +6,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.cacagdas.noteassistant.service.model.Note
 
 @Database(entities = [Note::class], version = 1)
 abstract class NoteDatabase : RoomDatabase() {
@@ -31,7 +32,9 @@ abstract class NoteDatabase : RoomDatabase() {
         private val roomCallback = object : RoomDatabase.Callback() {
             override fun onCreate(db: SupportSQLiteDatabase) {
                 super.onCreate(db)
-                INSTANCE?.let { PopulateDbAsyncTask(it).execute() }
+                INSTANCE?.let { PopulateDbAsyncTask(
+                    it
+                ).execute() }
             }
         }
     }
@@ -42,9 +45,24 @@ abstract class NoteDatabase : RoomDatabase() {
 
 
         override fun doInBackground(vararg p0: Void?): Void? {
-            noteDao.insert(Note("Title 1", "Description 1"))
-            noteDao.insert(Note("Title 2", "Description 2"))
-            noteDao.insert(Note("Title 3", "Description 3"))
+            noteDao.insert(
+                Note(
+                    "Title 1",
+                    "Description 1"
+                )
+            )
+            noteDao.insert(
+                Note(
+                    "Title 2",
+                    "Description 2"
+                )
+            )
+            noteDao.insert(
+                Note(
+                    "Title 3",
+                    "Description 3"
+                )
+            )
             return null
         }
 

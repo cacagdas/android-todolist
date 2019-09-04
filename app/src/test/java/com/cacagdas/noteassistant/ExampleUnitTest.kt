@@ -1,4 +1,4 @@
-package com.cacagdas.noteassistantmvvm
+package com.cacagdas.noteassistant
 
 import org.junit.Test
 

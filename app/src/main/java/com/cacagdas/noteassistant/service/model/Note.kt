@@ -1,4 +1,4 @@
-package com.cacagdas.noteassistantmvvm
+package com.cacagdas.noteassistant.service.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

@@ -1,8 +1,9 @@
-package com.cacagdas.noteassistantmvvm
+package com.cacagdas.noteassistant.service.repository
 
 import android.app.Application
 import android.os.AsyncTask
 import androidx.lifecycle.LiveData
+import com.cacagdas.noteassistant.service.model.Note
 
 class NoteRepository {
 
@@ -10,7 +11,8 @@ class NoteRepository {
     private lateinit var allNotes: LiveData<List<Note>>
 
     constructor(application: Application) {
-        val database: NoteDatabase? = NoteDatabase.getInstance(application)
+        val database: NoteDatabase? =
+            NoteDatabase.getInstance(application)
         noteDao = database!!.noteDao()
         allNotes = noteDao.getAllNotes()
     }
@@ -25,7 +27,8 @@ class NoteRepository {
         DeleteNoteAsyncTask(noteDao).execute(note)
     }
     fun deleteAllNotes(note: Note) {
-        DeleteAllNotesAsyncTask(noteDao).execute()
+        DeleteAllNotesAsyncTask(noteDao)
+            .execute()
     }
     fun getAllNotes(): LiveData<List<Note>> = allNotes
 

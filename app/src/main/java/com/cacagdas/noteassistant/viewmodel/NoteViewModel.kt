@@ -1,9 +1,11 @@
-package com.cacagdas.noteassistantmvvm
+package com.cacagdas.noteassistant.viewmodel
 
 import android.app.Application
 import androidx.annotation.NonNull
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import com.cacagdas.noteassistant.service.model.Note
+import com.cacagdas.noteassistant.service.repository.NoteRepository
 
 class NoteViewModel : AndroidViewModel {
 

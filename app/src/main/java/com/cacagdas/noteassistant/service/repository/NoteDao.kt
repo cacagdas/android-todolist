@@ -1,7 +1,8 @@
-package com.cacagdas.noteassistantmvvm
+package com.cacagdas.noteassistant.service.repository
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.cacagdas.noteassistant.service.model.Note
 
 
 @Dao

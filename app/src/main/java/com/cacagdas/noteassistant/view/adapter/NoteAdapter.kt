@@ -1,4 +1,4 @@
-package com.cacagdas.noteassistantmvvm
+package com.cacagdas.noteassistant.view.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import butterknife.BindView
 import butterknife.ButterKnife
+import com.cacagdas.noteassistant.R
+import com.cacagdas.noteassistant.service.model.Note
 
 class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteHolder>() {
     private lateinit var notes: List<Note>
